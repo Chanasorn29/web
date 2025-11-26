@@ -1,19 +1,23 @@
 @font-face {
-  font-family: Doto;
-  src: url();
+  font-family: "ZenTokyoZoo";
+  src: url("/font/ZenTokyoZoo-Regular.ttf") format("truetype");
+
+  font-family: "TiltPrism";
+  src: url("/font/TiltPrism-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
 }
 @import "@fontsource/zen-tokyo-zoo";
 @import "tailwindcss";
 
-/* =========================================
-   1. TAILWIND THEME CONFIGURATION
-   แมพชื่อ Class ที่จะใช้ -> ไปหาตัวแปรจริง
-   ========================================= */
+/* Tailwind theme config */
 @theme {
+  /* === Fonts === */
+  --font-tilt: "TiltPrism", sans-serif;
+  --font-zen: "ZenTokyoZoo", sans-serif;
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: "DM Mono", var(--font-geist-mono), monospace;
 
-  --font-geist-sans: 'Geist Sans', sans-serif;
   /* --- 🟣 Primary (สีม่วงหลัก) --- */
-  --color-primary-50: var(--h-color-primary-50);
+  --color-primary-50: var(--h-color-primary-50); 
   --color-primary-100: var(--h-color-primary-100);
   --color-primary-200: var(--h-color-primary-200);
   --color-primary-300: var(--h-color-primary-300);

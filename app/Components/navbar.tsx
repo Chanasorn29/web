@@ -1,7 +1,7 @@
 "use client";
-
+import { Zen_Tokyo_Zoo } from "next/font/google";
 import { useEffect, useState } from "react";
-import "@fontsource/zen-tokyo-zoo";
+const zenTokyoZoo = Zen_Tokyo_Zoo({ subsets: ["latin"], weight: ["400"] });
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false); // สำหรับมือถือ
@@ -20,14 +20,14 @@ export default function Navbar() {
       <div className="mx-auto flex items-center justify-between px-6 py-7">
       
         {/* Logo */}
-        <div className="font-zentokyo text-white font-bold text-lg tracking-tight">Chanasorn</div>
+        <div className={`${zenTokyoZoo.className} text-3xl`}>CHANASORN</div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-sm text-white/80">
-          <li><a href="#home">home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul className="hidden md:flex gap-8 text-xl text-white">
+          <li><a href="#home" className=" hover:text-gray-300">home</a></li>
+          <li><a href="#about" className=" hover:text-gray-300">About</a></li>
+          <li><a href="#projects" className=" hover:text-gray-300">Projects</a></li>
+          <li><a href="#contact" className=" hover:text-gray-300">Contact</a></li>
         </ul>
 
         {/* Hamburger Mobile */}
@@ -53,14 +53,14 @@ export default function Navbar() {
           <li className="py-2 cursor-pointer"><a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a></li>
         </ul>
       )}
-      {/* <div className="w-full p-3 bg-danger-600">
+      <div className="w-full p-3 bg-danger-600">
         <div className="flex-row  flex justify-center items-center">
           <p className="flex text-center text-white text-sm">Welcome to my portfolio website!</p>
           <button>
-            <span className="ml-4 text-white underline text-sm p-2 bg-danger-200 rounded-xl">Contact Me</span>
+            <span className="ml-4 text-white underline text-sm p-2 bg-danger-200 rounded-xl"><a href="#contact">Contact Me</a></span>
           </button>
         </div>
-      </div> */}
+      </div>
     </nav>
   );
 }
