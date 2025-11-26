@@ -1,26 +1,228 @@
+@font-face {
+  font-family: Doto;
+  src: url();
+}
+@import "@fontsource/zen-tokyo-zoo";
 @import "tailwindcss";
 
+/* =========================================
+   1. TAILWIND THEME CONFIGURATION
+   แมพชื่อ Class ที่จะใช้ -> ไปหาตัวแปรจริง
+   ========================================= */
+@theme {
+
+  --font-geist-sans: 'Geist Sans', sans-serif;
+  /* --- 🟣 Primary (สีม่วงหลัก) --- */
+  --color-primary-50: var(--h-color-primary-50);
+  --color-primary-100: var(--h-color-primary-100);
+  --color-primary-200: var(--h-color-primary-200);
+  --color-primary-300: var(--h-color-primary-300);
+  --color-primary-400: var(--h-color-primary-400);
+  --color-primary-500: var(--h-color-primary-500);
+  --color-primary-600: var(--h-color-primary-600); /* 💜 สีม่วง Brand หลัก */
+  --color-primary-700: var(--h-color-primary-700);
+  --color-primary-800: var(--h-color-primary-800);
+  --color-primary-900: var(--h-color-primary-900);
+  --color-primary-950: var(--h-color-primary-950);
+  --color-primary-1000: var(--h-color-primary-1000);
+
+  /* --- ⚪️⚫️ Neutral (ขาว-เทา-ดำ) --- */
+  --color-neutral-0: var(--h-color-neutral-0);     /* ⚪️ ขาว */
+  --color-neutral-50: var(--h-color-neutral-50);
+  --color-neutral-100: var(--h-color-neutral-100);
+  --color-neutral-200: var(--h-color-neutral-200);
+  --color-neutral-300: var(--h-color-neutral-300);
+  --color-neutral-400: var(--h-color-neutral-400);
+  --color-neutral-500: var(--h-color-neutral-500);
+  --color-neutral-600: var(--h-color-neutral-600); /* 🌚 เทาเข้ม (ตัวหนังสือหลัก) */
+  --color-neutral-700: var(--h-color-neutral-700);
+  --color-neutral-800: var(--h-color-neutral-800);
+  --color-neutral-900: var(--h-color-neutral-900);
+  --color-neutral-950: var(--h-color-neutral-950);
+  --color-neutral-1000: var(--h-color-neutral-1000); /* ⚫️ ดำสนิท */
+
+  /* --- 🔴 Danger (แดงอมชมพู) --- */
+  --color-danger-50: var(--h-color-danger-50);
+  --color-danger-100: var(--h-color-danger-100);
+  --color-danger-200: var(--h-color-danger-200);
+  --color-danger-300: var(--h-color-danger-300);
+  --color-danger-400: var(--h-color-danger-400);
+  --color-danger-500: var(--h-color-danger-500); /* 💖 แดงชมพูสด */
+  --color-danger-600: var(--h-color-danger-600);
+  --color-danger-700: var(--h-color-danger-700);
+  --color-danger-800: var(--h-color-danger-800);
+  --color-danger-900: var(--h-color-danger-900);
+  --color-danger-950: var(--h-color-danger-950);
+
+  /* --- ☄️ Meteorite (ม่วงอ่อน/ฟ้าหม่น) --- */
+  --color-meteorite-50: var(--h-color-meteorite-50);
+  --color-meteorite-100: var(--h-color-meteorite-100);
+  --color-meteorite-200: var(--h-color-meteorite-200);
+  --color-meteorite-300: var(--h-color-meteorite-300);
+  --color-meteorite-400: var(--h-color-meteorite-400);
+  --color-meteorite-500: var(--h-color-meteorite-500);
+  --color-meteorite-600: var(--h-color-meteorite-600);
+
+  /* --- 💧 Light Blue (ฟ้าอ่อน) --- */
+  --color-light-blue-50: var(--h-color-light-blue-50);
+  --color-light-blue-100: var(--h-color-light-blue-100);
+  --color-light-blue-200: var(--h-color-light-blue-200);
+  --color-light-blue-300: var(--h-color-light-blue-300);
+  --color-light-blue-400: var(--h-color-light-blue-400);
+  --color-light-blue-500: var(--h-color-light-blue-500);
+
+  /* --- ⚠️ Warning (ส้มเหลือง) --- */
+  --color-warning-50: var(--h-color-warning-50);
+  --color-warning-100: var(--h-color-warning-100);
+  --color-warning-200: var(--h-color-warning-200);
+  --color-warning-300: var(--h-color-warning-300);
+  --color-warning-400: var(--h-color-warning-400);
+  --color-warning-500: var(--h-color-warning-500);
+  --color-warning-600: var(--h-color-warning-600);
+  --color-warning-700: var(--h-color-warning-700);
+  --color-warning-800: var(--h-color-warning-800);
+  --color-warning-900: var(--h-color-warning-900);
+  --color-warning-950: var(--h-color-warning-950);
+
+  /* --- ✅ Success (เขียว) --- */
+  --color-success-50: var(--h-color-success-50);
+  --color-success-100: var(--h-color-success-100);
+  --color-success-200: var(--h-color-success-200);
+  --color-success-300: var(--h-color-success-300);
+  --color-success-400: var(--h-color-success-400);
+  --color-success-500: var(--h-color-success-500);
+  --color-success-600: var(--h-color-success-600);
+  --color-success-700: var(--h-color-success-700);
+  --color-success-800: var(--h-color-success-800);
+  --color-success-900: var(--h-color-success-900);
+  --color-success-950: var(--h-color-success-950);
+
+  /* --- 🥎 Neon & Peridot (เขียวสะท้อนแสง) --- */
+  --color-neon-500: var(--h-color-neon-500);
+  --color-neon-600: var(--h-color-neon-600);
+  --color-peridot-500: var(--h-color-peridot-500);
+  --color-peridot-600: var(--h-color-peridot-600);
+
+  /* --- Fonts --- */
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: "DM Mono", var(--font-geist-mono), monospace;
+}
+
+/* =========================================
+   2. ROOT VARIABLES (SOURCE OF TRUTH)
+   ค่าสีดิบ (Hex Codes) ทั้งหมดอยู่ตรงนี้
+   ========================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --h-color-primary-50: #f1ecff;
+  --h-color-primary-100: #e2dbfc;
+  --h-color-primary-200: #c5b8f8;
+  --h-color-primary-300: #b39ef3;
+  --h-color-primary-400: #7253ee;
+  --h-color-primary-500: #673de6;
+  --h-color-primary-600: #5025d1;
+  --h-color-primary-700: #45209d;
+  --h-color-primary-800: #2f1c6a;
+  --h-color-primary-900: #261559;
+  --h-color-primary-950: #110c29;
+  --h-color-primary-1000: #1f1346;
+
+  /* Neutral */
+  --h-color-neutral-0: #fff;
+  --h-color-neutral-50: #f8f9fa;
+  --h-color-neutral-100: #eeeef0;
+  --h-color-neutral-200: #dedee2;
+  --h-color-neutral-300: #c6c6cc;
+  --h-color-neutral-400: #9d9ea4;
+  --h-color-neutral-500: #797980;
+  --h-color-neutral-600: #58585e;
+  --h-color-neutral-700: #36363b;
+  --h-color-neutral-800: #222225;
+  --h-color-neutral-900: #18181a;
+  --h-color-neutral-950: #101011;
+  --h-color-neutral-1000: #000;
+
+  /* Danger */
+  --h-color-danger-50: #fff4f3;
+  --h-color-danger-100: #ffeae9;
+  --h-color-danger-200: #ff508a;
+  --h-color-danger-300: #ff369b;
+  --h-color-danger-400: #ff1d8e;
+  --h-color-danger-500: #ff0381; /* <--- สีแดงอมชมพูที่ถามหา */
+  --h-color-danger-600: #ff1d68;
+  --h-color-danger-700: #cf0068;
+  --h-color-danger-800: #b6005b;
+  --h-color-danger-900: #45100f;
+  --h-color-danger-950: #230706;
+
+  /* Meteorite */
+  --h-color-meteorite-50: #f5f5ff;
+  --h-color-meteorite-100: #eaeaff;
+  --h-color-meteorite-200: #cbc8ff;
+  --h-color-meteorite-300: #b6b2ff;
+  --h-color-meteorite-400: #a19bff;
+  --h-color-meteorite-500: #8c85ff;
+  --h-color-meteorite-600: #8103ff;
+
+  /* Light Blue */
+  --h-color-light-blue-50: #fafbff;
+  --h-color-light-blue-100: #f4f5ff;
+  --h-color-light-blue-200: #d5dfff;
+  --h-color-light-blue-300: #c3cce9;
+  --h-color-light-blue-400: #b0b9d4;
+  --h-color-light-blue-500: #888faa;
+
+  /* Warning */
+  --h-color-warning-50: #fdf6e8;
+  --h-color-warning-100: #ffeec8;
+  --h-color-warning-200: #ffe399;
+  --h-color-warning-300: #ffd366;
+  --h-color-warning-400: #ffbf1a;
+  --h-color-warning-500: #e69800;
+  --h-color-warning-600: #c46c00;
+  --h-color-warning-700: #9b4600;
+  --h-color-warning-800: #6b2c00;
+  --h-color-warning-900: #4a1c00;
+  --h-color-warning-950: #231000;
+
+  /* Success */
+  --h-color-success-50: #f1f9f3;
+  --h-color-success-100: #dcf8e3;
+  --h-color-success-200: #b8f1c9;
+  --h-color-success-300: #7ce5a2;
+  --h-color-success-400: #3ccb7f;
+  --h-color-success-500: #009e5b;
+  --h-color-success-600: #007a49;
+  --h-color-success-700: #005432;
+  --h-color-success-800: #003d24;
+  --h-color-success-900: #002e1a;
+  --h-color-success-950: #01170b;
+
+  /* Neon & Peridot */
+  --h-color-neon-500: #cf0;
+  --h-color-neon-600: #bded00;
+  --h-color-peridot-500: #0f0;
+  --h-color-peridot-600: #20e052;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* =========================================
+   3. BASE STYLES
+   ========================================= */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--h-color-neutral-900);
+    --foreground: var(--h-color-neutral-100);
   }
 }
 
+:root {
+  --background: var(--h-color-neutral-0);
+  --foreground: var(--h-color-neutral-600);
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
