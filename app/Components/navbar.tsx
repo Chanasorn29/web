@@ -20,8 +20,8 @@ export default function Navbar() {
       <div className="mx-auto flex items-center justify-between px-6 py-7">
       
         {/* Logo */}
-        <div className={`${zenTokyoZoo.className} text-3xl`}>CHANASORN</div>
-
+        <div className={`${zenTokyoZoo.className} text-2xl lg:text-3xl`}>CHANASORN</div>
+    
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-xl text-white">
           <li><a href="#home" className=" hover:text-gray-300">home</a></li>
