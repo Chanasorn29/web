@@ -1,15 +1,102 @@
+@font-face {
+  font-family: "ZenTokyoZoo";
+  src: url("/font/ZenTokyoZoo-Regular.ttf") format("truetype");
 
+  font-family: "TiltPrism";
+  src: url("/font/TiltPrism-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+}
 @import "@fontsource/zen-tokyo-zoo";
 @import "tailwindcss";
 
-/* =========================================
-   1. TAILWIND THEME CONFIGURATION
-   แมพชื่อ Class ที่จะใช้ -> ไปหาตัวแปรจริง
-   ========================================= */
+
+@layer utilities {
+  @keyframes tilt {
+    0%, 100% { transform: rotate(0deg); }
+    20% { transform: rotate(-3deg); }
+    40% { transform: rotate(2deg); }
+    60% { transform: rotate(-3deg); }
+    80% { transform: rotate(2deg); }
+  }
+
+  .animate-tilt {
+    animation: tilt 0.6s ease-in-out infinite;
+  }
+}
+@keyframes diagonal-shine {
+  0% {
+    transform: translateX(-50%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(25deg);
+  }
+}
+
+/* Generic shine layer for ANY element */
+.shine {
+  position: absolute;
+  inset: -100%;
+  width: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  animation: diagonal-shine 4s infinite linear;
+  mix-blend-mode: screen;
+}
+ .watermark-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.08; /* จางระดับ watermark */
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+
+    /* Repeat pattern */
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.05) 40px,
+      rgba(255,255,255,0.05) 80px
+    );
+  }
+
+  /* Text overlay layer */
+  .watermark-text-pattern {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 70px;
+    align-items: center;
+    justify-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    user-select: none;
+  }
+
+
+/* Tailwind theme config */
 @theme {
+  /* === Fonts === */
+  --font-tilt: "TiltPrism", sans-serif;
+  --font-zen: "ZenTokyoZoo", sans-serif;
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: "DM Mono", var(--font-geist-mono), monospace;
 
   /* --- 🟣 Primary (สีม่วงหลัก) --- */
-  --color-primary-50: var(--h-color-primary-50);
+  --color-primary-50: var(--h-color-primary-50); 
   --color-primary-100: var(--h-color-primary-100);
   --color-primary-200: var(--h-color-primary-200);
   --color-primary-300: var(--h-color-primary-300);
