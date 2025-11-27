@@ -1,7 +1,4 @@
-@font-face {
-  font-family: Doto;
-  src: url();
-}
+
 @import "@fontsource/zen-tokyo-zoo";
 @import "tailwindcss";
 
@@ -11,7 +8,6 @@
    ========================================= */
 @theme {
 
-  --font-geist-sans: 'Geist Sans', sans-serif;
   /* --- 🟣 Primary (สีม่วงหลัก) --- */
   --color-primary-50: var(--h-color-primary-50);
   --color-primary-100: var(--h-color-primary-100);
@@ -125,10 +121,10 @@
   --h-color-primary-800: #2f1c6a;
   --h-color-primary-900: #261559;
   --h-color-primary-950: #110c29;
-  --h-color-primary-1000: #1f1346;
+  --h-color-primary-1000: #11092a;
 
   /* Neutral */
-  --h-color-neutral-0: #fff;
+  --h-color-neutral-0: #f2f3f6;
   --h-color-neutral-50: #f8f9fa;
   --h-color-neutral-100: #eeeef0;
   --h-color-neutral-200: #dedee2;

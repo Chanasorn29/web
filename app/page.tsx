@@ -12,18 +12,24 @@ export default function App() {
         </p>
       </section>
 
-      <section id="home" className="h-[120vh] flex items-center justify-center bg-gray-950">
+      <section id="home" className="h-[120vh] flex items-center justify-center bg-neutral-0">
         <p className="text-gray-400">More content below...</p>
       </section>
-      <section id="about" className="h-[120vh] flex items-center justify-center bg-amber-50">
+      <section id="about" className="h-[120vh] flex items-center justify-center bg-white">
         <p className="text-gray-400">About Section...</p>
       </section>
-      <section id="projects" className="h-[120vh] flex items-center justify-center bg-green-950">
-        <p className="text-gray-400">Projects Section...</p>
+      <section className="h-[120vh] bg-primary-1000"></section>
+      <section id="projects" className="bg-[#0c0520] h-screen w-full relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url(/public.avif)]  bg-cover bg-bottom bg-no-repeat txet-center flex flex-col items-center justify-center">
+           <p className="text-gray-400">Projects Section...</p>
+        </div>
       </section>
-      <section id="contact" className="h-[120vh] flex items-center justify-center">
+      <section id="about" className="h-[120vh] flex items-center justify-center bg-white">
+        <p className="text-gray-400">About Section...</p>
+      </section>
+      {/* <section id="contact" className="h-[120vh] flex items-center justify-center">
         <p className="text-gray-400">Contact Section...</p> 
-      </section>
+      </section> */}
     </div>
   );
 }
