@@ -8,22 +8,50 @@
 @import "@fontsource/zen-tokyo-zoo";
 @import "tailwindcss";
 
-@keyframes canopy-horizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.skills-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-@keyframes canopy-vertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+.scroll-row {
+  display: flex;
+  margin-bottom: 15px;
+  white-space: nowrap; 
 }
 
-.animate-canopy-horizontal {
-  animation: canopy-horizontal var(--duration) linear infinite;
+
+.scroll-content {
+  display: flex;
+ 
 }
 
-.animate-canopy-vertical {
-  animation: canopy-vertical var(--duration) linear infinite;
+.left-to-right .scroll-content {
+  animation: scroll-left-to-right 20s linear infinite;
+}
+
+.right-to-left .scroll-content {
+  animation: scroll-right-to-left 20s linear infinite;
+}
+
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
 }
 
 
