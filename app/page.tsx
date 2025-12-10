@@ -177,7 +177,7 @@ export default function App() {
           <p className="text-lg">Check out some of my work below!</p>
         </div>
         <div>
-          <video width="320" height="240" autoplay muted>
+          <video width="320" height="240" muted>
               <source src="movie.mp4" type="video/mp4"/>
           </video>
         </div>
