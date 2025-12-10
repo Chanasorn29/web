@@ -25,9 +25,9 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-white">Facebook</a>
-            <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">GitHub</a>
+            <a href="https://www.facebook.com/chanasorn.thongnumwon/" className="hover:text-white">Facebook</a>
+            <a href="https://www.instagram.com/wil_low.io/" className="hover:text-white">Instagram</a>
+            <a href="https://github.com/Chanasorn29" className="hover:text-white">GitHub</a>
           </div>
         </div>
 

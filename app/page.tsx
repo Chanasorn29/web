@@ -12,7 +12,7 @@ export default function App() {
       <section id="home" className="h-[120vh] flex flex-col items-center justify-center">
         <div className="flex flex-col lg:flex-row lg:gap-50 items-center justify-center mt-40 p-6 sm:mt-0">
           <div className="w-full lg:w-1/2">
-            <h1 className="text-5xl font-bold mb-4 text-meteorite">Hello I’m Tonliw</h1>
+            <h1 className="text-6xl font-bold mb-4 text-meteorite mt-6">Hello I’m Tonliw</h1>
             <div className="text-lg">
               <p className="text-meteorite-500">
                 A passionate developer crafting seamless web experiences
@@ -22,12 +22,12 @@ export default function App() {
               <p>and always eager to learn more!</p>
             </div>
             <div>
-              <button className="mt-4 px-10 py-4 w-full lg:w-auto bg-danger-600 text-white font-bold rounded hover:bg-meteorite-600 transition">
+              <button className="mt-6 px-15 py-4 w-full lg:w-auto bg-danger-600 text-white font-bold rounded hover:bg-meteorite-600 transition">
                 learn more!
               </button>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 mt-5 lg:mt-0 flex justify-center">
+          <div className="w-full p-8 lg:w-1/2 mt-5 lg:mt-0 flex justify-center">
             <img src="/www.png" alt="logo" className="animate-tilt max-w-full h-auto" />
           </div>
         </div>
@@ -177,14 +177,15 @@ export default function App() {
           <p className="text-lg">Check out some of my work below!</p>
         </div>
         <div>
-          
-
-
+          <video width="320" height="240" autoplay muted>
+              <source src="movie.mp4" type="video/mp4"/>
+          </video>
         </div>
         </div>
       </section>
       <FloatingContact />
-      <Footer />
+      <section id="footer"><Footer /></section>
+      
     </div>
     
   );

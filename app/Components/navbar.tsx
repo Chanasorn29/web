@@ -25,7 +25,7 @@ export default function Navbar() {
           <li><a href="#home" className="hover:text-gray-300">Home</a></li>
           <li><a href="#about" className="hover:text-gray-300">About</a></li>
           <li><a href="#projects" className="hover:text-gray-300">Projects</a></li>
-          <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
+          <li><a href="#footer" className="hover:text-gray-300">Contact</a></li>
         </ul>
 
         {/* Hamburger Mobile */}
@@ -77,8 +77,8 @@ export default function Navbar() {
     </span>
 
     <span className="shine flex items-center justify-center"></span>
-
-    Contact me now!
+    <a href="#footer">Contact me now!</a>
+    
     <span className="px-1">
       <img src="/point.png" alt="" className="size-4 mt-1" />
     </span>
