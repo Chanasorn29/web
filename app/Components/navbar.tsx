@@ -16,16 +16,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black">
-      <div className="mx-auto flex items-center justify-between px-6 py-7">
+      <div className="mx-auto flex items-center justify-between px-6 py-5">
         {/* Logo */}
-        <div className={`${zenTokyoZoo.className} text-2xl lg:text-3xl`}>CHANASORN</div>
+        <div className={`${zenTokyoZoo.className} text-xl lg:text-2xl`}>CHANASORN</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-xl text-white">
           <li><a href="#home" className="hover:text-gray-300">Home</a></li>
           <li><a href="#about" className="hover:text-gray-300">About</a></li>
           <li><a href="#projects" className="hover:text-gray-300">Projects</a></li>
-          <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
+          <li><a href="#footer" className="hover:text-gray-300">Contact</a></li>
         </ul>
 
         {/* Hamburger Mobile */}
@@ -51,7 +51,7 @@ export default function Navbar() {
       {/* Contact Button */}
 <div
   
-  className="relative w-full p-3 bg-danger-600 flex justify-center overflow-hidden bg-watermark"
+  className="relative w-full p-2 bg-danger-600 flex justify-center overflow-hidden bg-watermark"
 >
   <span className="shine"></span>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
     document
       .getElementById("contact")
       ?.scrollIntoView({ behavior: "smooth" });
-  }} className="relative overflow-hidden flex px-6 py-3 
+  }} className="relative overflow-hidden flex px-6 py-0.5 
                      bg-danger-300 text-white rounded-lg 
                      hover:bg-black transition hover:scale-105 animate-tilt">
 
@@ -76,11 +76,11 @@ export default function Navbar() {
       CONTACT
     </span>
 
-    <span className="shine"></span>
-
-    Contact me now!
-    <span className="px-2">
-      <img src="/point.png" alt="" className="size-6" />
+    <span className="shine flex items-center justify-center"></span>
+    <a href="#footer">Contact me now!</a>
+    
+    <span className="px-1">
+      <img src="/point.png" alt="" className="size-4 mt-1" />
     </span>
   </button>
 </div>
