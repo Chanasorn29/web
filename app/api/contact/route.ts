@@ -1,23 +1,18 @@
-// pages/api/contact.ts
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
+export async function POST(request: Request) {
   try {
-    // รองรับทั้ง JSON หรือ form-data
-    const data = req.body;
-    const email = data.email || (req.body.get && req.body.get("email")); // form-data fallback
-    const message = data.message || (req.body.get && req.body.get("message"));
+    // 1. อ่านข้อมูลจาก Request (ใน App Router ต้องใช้ await request.json())
+    const data = await request.json();
+    const { email, message } = data;
 
+    // ตรวจสอบข้อมูล
     if (!email || !message) {
-      return res.status(400).json({ error: "Missing email or message" });
+      return NextResponse.json(
+        { error: "Missing email or message" },
+        { status: 400 }
+      );
     }
 
     // Debug log
@@ -26,16 +21,16 @@ export default async function handler(
     console.log("Message:", message);
     console.log("=======================");
 
-    // สร้าง nodemailer transporter
+    // 2. สร้าง nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Gmail ของคุณ
-        pass: process.env.EMAIL_PASS, // App Password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // ส่งเมล
+    // 3. ส่งเมล
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER,
@@ -43,9 +38,14 @@ export default async function handler(
       text: `Email: ${email}\nMessage:\n${message}`,
     });
 
-    return res.status(200).json({ status: "success" });
+    // 4. ส่ง Response กลับ (ใช้ NextResponse)
+    return NextResponse.json({ status: "success" }, { status: 200 });
+
   } catch (err) {
     console.error("Error sending mail:", err);
-    return res.status(500).json({ error: "Internal Server Error" });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }
