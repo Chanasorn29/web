@@ -1,6 +1,5 @@
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footter";
-import FloatingContact from "./Components/FloatingContact";
 
 export default function App() {
   return (
@@ -183,7 +182,6 @@ export default function App() {
         </div>
         </div>
       </section>
-      <FloatingContact />
       <section id="footer"><Footer /></section>
       
     </div>
