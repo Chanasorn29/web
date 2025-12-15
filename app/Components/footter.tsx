@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <h2 className="text-xl font-bold mb-3">MyWebsite</h2>
           <p className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} All rights reserved.
+            © {new Date().getFullYear()} Tonliw. Designed & developed by me.
           </p>
         </div>
 
