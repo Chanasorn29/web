@@ -132,6 +132,9 @@
     user-select: none;
   }
 
+html {
+  scroll-behavior: smooth;
+}
 /* Tailwind theme config */
 @theme {
   /* === Fonts === */

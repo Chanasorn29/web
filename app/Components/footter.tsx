@@ -28,6 +28,7 @@ export default function Footer() {
             <a href="https://www.facebook.com/chanasorn.thongnumwon/" className="hover:text-white">Facebook</a>
             <a href="https://www.instagram.com/wil_low.io/" className="hover:text-white">Instagram</a>
             <a href="https://github.com/Chanasorn29" className="hover:text-white">GitHub</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=66200051@kmitl.ac.th" className="hover:text-white">Gmail</a>
           </div>
         </div>
 

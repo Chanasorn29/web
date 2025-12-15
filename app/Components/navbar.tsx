@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black">
       <div className="mx-auto flex items-center justify-between px-6 py-5">
         {/* Logo */}
-        <div className={`${zenTokyoZoo.className} text-xl lg:text-2xl`}>CHANASORN</div>
+        <div className={`${zenTokyoZoo.className} text-2xl lg:text-3xl`}>CHANASORN</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-xl text-white">
@@ -44,7 +44,7 @@ export default function Navbar() {
           <li className="py-2 cursor-pointer"><a href="#home" onClick={() => setMobileOpen(false)}>Home</a></li>
           <li className="py-2 cursor-pointer"><a href="#about" onClick={() => setMobileOpen(false)}>About</a></li>
           <li className="py-2 cursor-pointer"><a href="#projects" onClick={() => setMobileOpen(false)}>Projects</a></li>
-          <li className="py-2 cursor-pointer"><a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a></li>
+          <li className="py-2 cursor-pointer"><a href="#footer" onClick={() => setMobileOpen(false)}>Contact</a></li>
         </ul>
       )}
 
