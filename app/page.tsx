@@ -191,7 +191,7 @@ export default function App() {
               {
                 title: "Web Anime Dairy",
                 desc: "Created an anime review website with a social-media–style layout.",
-                video: "/",
+                video: "/anime.mp4",
                 tech: ["Django", "HTML", "Javascript"],
               },
               {
