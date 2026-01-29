@@ -30,7 +30,7 @@ export default function App() {
             </div>
           </div>
           <div className="w-full p-8 lg:w-1/2 mt-5 lg:mt-0 flex justify-center">
-            <img src="/Photoroom_25690107_013542.png" alt="logo" className="lg:h-100 lg:w-100 h-50 w-50" />
+            <img src="/liwwwww.png" alt="logo" className="lg:h-100 lg:w-100 h-50 w-50" />
           </div>
         </div>
 
